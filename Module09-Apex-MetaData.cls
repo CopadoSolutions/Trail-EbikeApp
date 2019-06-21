@@ -59,11 +59,11 @@ private static Attachment insertAttachment(Id parentId, String name, String b) {
 	return x;
 }
 private static String createCacheRefreshString(String recordId, String apiKey) {
-	String s = '{"type":"wait","method":"POST","url":"https://copado.herokuapp.com/json/v1/webhook/metadata/'+recordId+'?api_key='+apiKey+'","body":"","queryParameters":[["api_key","'+apiKey+'"]],"headers":[]}';
+	String s = '{"type":"wait","method":"POST","url":"https://app-api.copa.do/json/v1/webhook/metadata/'+recordId+'?api_key='+apiKey+'","body":"","queryParameters":[["api_key","'+apiKey+'"]],"headers":[]}';
 	return s;
 }
 private static String createRunCIjobString(String recordId, String apiKey) {
-	String s = '{"type":"wait","method":"POST","url":"https://copado.herokuapp.com/json/v1/webhook/ci/'+recordId+'?api_key='+apiKey+'","body":"","queryParameters":[["api_key","'+apiKey+'"]],"headers":[]}';
+	String s = '{"type":"wait","method":"POST","url":"https://app-api.copa.do/json/v1/webhook/ci/'+recordId+'?api_key='+apiKey+'","body":"","queryParameters":[["api_key","'+apiKey+'"]],"headers":[]}';
 	return s;
 }
 private static copado__Step__c createUrlCalloutStep(Id deployId, Integer stepOrder, String stepName, String datajson) {
