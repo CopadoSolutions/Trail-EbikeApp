@@ -32,7 +32,7 @@
             <targetReference>Add_contact_to_update_list</targetReference>
         </connector>
     </assignments>
-    <description>A simple flow to set the MailingCountry for related contacts against an account with the account's BillingCountry value.</description>
+    <description>A simple flow to set the MailingCountry for related contacts against an account with the account&apos;s BillingCountry value.</description>
     <interviewLabel>Update Account Contacts {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Account Contacts</label>
     <loops>
