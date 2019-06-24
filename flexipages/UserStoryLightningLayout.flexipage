@@ -158,25 +158,6 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>relatedListApiName</name>
-                <value>copado__User_Story_Metadata__r</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <name>Facet-ng9r0zzq5u</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>copado__User_Story__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
                 <value>copado__Promoted_User_Stories__r</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
@@ -186,59 +167,6 @@
             <componentName>force:relatedListSingleContainer</componentName>
         </componentInstances>
         <name>Facet-2a3cd32d-d3a3-43b2-8394-1c4a6f59fd1d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>copado__User_Story__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
-                <value>copado__Deployment_Tasks__r</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <name>Facet-1bc6b309-fa79-44f8-8784-9ed503f6ece6</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>copado__User_Story__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
-                <value>copado__External_CI_Jobs__r</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>parentFieldApiName</name>
-                <value>copado__User_Story__c.Id</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListApiName</name>
-                <value>copado__External_CI_Job_Results__r</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>relatedListComponentOverride</name>
-                <value>NONE</value>
-            </componentInstanceProperties>
-            <componentName>force:relatedListSingleContainer</componentName>
-        </componentInstances>
-        <name>Facet-ff31aae2-944c-449b-8789-babca1b47ca9</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -350,44 +278,11 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                <value>Facet-ng9r0zzq5u</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Conflict Resolution</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
                 <value>Facet-2a3cd32d-d3a3-43b2-8394-1c4a6f59fd1d</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
                 <value>Promotions</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
-                <value>Facet-1bc6b309-fa79-44f8-8784-9ed503f6ece6</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>Deployment Tasks</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:tab</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>body</name>
-                <value>Facet-ff31aae2-944c-449b-8789-babca1b47ca9</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>title</name>
-                <value>CI Jobs</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
