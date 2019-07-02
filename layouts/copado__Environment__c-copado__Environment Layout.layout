@@ -254,6 +254,22 @@
         <sortField>copado__Start_Time__c</sortField>
         <sortOrder>Desc</sortOrder>
     </relatedLists>
+        <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>copado__Project__c</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Destination_Environment__c</fields>
+        <relatedList>copado__Promotion__c.copado__Source_Environment__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>New</excludeButtons>
+        <fields>NAME</fields>
+        <fields>copado__Project__c</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Source_Environment__c</fields>
+        <relatedList>copado__Promotion__c.copado__Destination_Environment__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
