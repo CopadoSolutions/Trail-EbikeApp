@@ -4,7 +4,7 @@ copado__User_Story__c u1 = new copado__User_Story__c(Module_External_Id__c='Ebik
 u1.copado__User_Story_Title__c = 'Module 4: EBike PermissionSet';
 u1.copado__Project__r = new copado__Project__c(Module_External_Id__c='EBike-Project');
 u1.copado__Status__c = 'Approved';
-u1.copado__Functional_Specifications__c = 'FLS, OLS, Tab Visibility and App visibility for Admin profile needs to be added as well as the EBike permissionSet.';
+u1.copado__Functional_Specifications__c = 'Grant FLS, OLS, Tab Visibility and App visibility for the EBike Permission Set.';
 u1.copado__Org_Credential__c = dev2.Id;
 u1.copado__Environment__c = dev2.copado__Environment__c;
 upsert u1 Module_External_Id__c;
