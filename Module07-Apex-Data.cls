@@ -2,8 +2,9 @@ Map<String, copado__Org__c> orgCredentials = new Map<String, copado__Org__c>();
 for(copado__Org__c o : [select Id, Name, copado__Environment__c from copado__Org__c where copado__Org_Type__c='Sandbox']){
 	orgCredentials.put(o.Name, o);
 }
-/*
+
 List<copado__User_Story__c> stories = new List<copado__User_Story__c>();
+/*
 copado__User_Story__c u1 = new copado__User_Story__c(Module_External_Id__c='Ebike-Module7-US1');
 u1.copado__User_Story_Title__c = 'Module 7: Apex conflict change in Dev1';
 u1.copado__Project__r = new copado__Project__c(Module_External_Id__c='EBike-Project');
