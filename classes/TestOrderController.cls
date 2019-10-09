@@ -1,31 +1,32 @@
+/**
+ * @description Test Class for Order Controller.
+ */
 @isTest
 public class TestOrderController {
 
+    /**
+     * @description test setup method
+     * @return      void
+     */
     @testSetup
     static void setup() {
-        Account acc = new Account(
-            Name = 'Sample Account'
-        );
+        Account acc = new Account(Name='Sample Account');
         insert acc;
 
-        Order__c order = new Order__c(
-            Account__c = acc.Id
-        );
+        Order__c order = new Order__c(Account__c=acc.Id);
         insert order;
 
-        Product__c p = new Product__c(
-            Name = 'Sample Product'
-        );
+        Product__c p = new Product__c(Name='Sample Product');
         insert p;
 
-        Order_Item__c orderItem = new Order_Item__c(
-            Order__c = order.Id,
-            Product__c = p.Id
-        );
+        Order_Item__c orderItem = new Order_Item__c(Order__c=order.Id, Product__c=p.Id);
         insert orderItem;
-
     }
 
+    /**
+     * @description Validate that the getOrderItems method returns records when passed an ID.
+     * @return      void
+     */
     @isTest
     static void testGetOrderItems() {
         Order__c testOrder = [SELECT Id from Order__c];
