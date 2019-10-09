@@ -1,19 +1,51 @@
+/**
+ * @description This is the controller for the product summary page.
+ */
 public with sharing class ProductController {
 
-    static Integer PAGE_SIZE = 6;
+    static Integer page_size = 6;
 
+    /**
+     * @description Twrapper class for filters
+     */
     public class Filters {
+        /**
+         * @description Getter/Setter
+         * @return  String Array.
+         */
         public String searchKey { get;set; }
 
+        /**
+         * @description Getter/Setter
+         * @return  String Array.
+         */
         public Decimal maxPrice { get;set; }
 
+        /**
+         * @description Getter/Setter
+         * @return  String Array.
+         */
         public String[] categories { get;set; }
 
+        /**
+         * @description Getter/Setter
+         * @return  String Array.
+         */
         public String[] materials { get;set; }
 
+        /**
+         * @description Getter/Setter
+         * @return  String Array.
+         */
         public String[] levels { get;set; }
     }
 
+    /**
+     * @description get the products
+     * @param   filters     Get the products for a given filter criteria.
+     * @param   pageNumber  Filter the range based on the page number derived from the pagination.
+     * @return  the PageResult object.
+     */
     @AuraEnabled(Cacheable=true)
     public static PagedResult getProducts(String filters, Integer pageNumber) {
         String key, whereClause = '';
@@ -48,7 +80,7 @@ public with sharing class ProductController {
                 whereClause = 'WHERE ' + String.join( criteria, ' AND ' );
             }                      
         }
-        Integer pageSize = ProductController.PAGE_SIZE;
+        Integer pageSize = ProductController.page_size;
         Integer offset = (pageNumber - 1) * pageSize;
         PagedResult result =  new PagedResult();
         result.pageSize = pageSize;
@@ -58,6 +90,12 @@ public with sharing class ProductController {
         return result;
     }
 
+    /**
+     * @description For a selected product, also retrieve similar products
+     * @param   productId   The ID of the product currently on display.
+     * @param   familyId    The ID of the product family.
+     * @return  a list of products.
+     */
     @AuraEnabled(Cacheable=true)
     public static Product__c[] getSimilarProducts(Id productId, Id familyId) {
         return [SELECT Id, Name, MSRP__c, Description__c, Category__c, Level__c, Picture_URL__c, Material__c FROM Product__c WHERE Product_Family__c=:familyId AND Id!=:productId];
