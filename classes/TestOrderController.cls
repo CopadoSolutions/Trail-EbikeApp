@@ -8,8 +8,7 @@ public class TestOrderController {
      * @description test setup method
      * @return      void
      */
-    @testSetup
-    static void setup() {
+    @testSetup static void setup() {
         Account acc = new Account(Name='Sample Account');
         insert acc;
 
@@ -27,11 +26,9 @@ public class TestOrderController {
      * @description Validate that the getOrderItems method returns records when passed an ID.
      * @return      void
      */
-    @isTest
-    static void testGetOrderItems() {
+    static testMethod void testGetOrderItems() {
         Order__c testOrder = [SELECT Id from Order__c];
         List<Order_Item__c> orderItems = OrderController.getOrderItems(testOrder.Id);
         System.assertEquals(orderItems.size(), 1);
     }
-
 }

@@ -48,9 +48,13 @@ public with sharing class ProductController {
      */
     @AuraEnabled(Cacheable=true)
     public static PagedResult getProducts(String filters, Integer pageNumber) {
-        String key, whereClause = '';
+        String key = '';
+        String whereClause = '';
         Decimal maxPrice;
-        String[] categories, materials, levels, criteria = new String[]{};
+        String[] categories = new String[]{};
+        String[] materials = new String[]{};
+        String[] levels = new String[]{};
+        String[] criteria = new String[]{};
         if (!String.isEmpty(filters)) {
             Filters productFilters = (Filters) JSON.deserializeStrict(filters, ProductController.Filters.class);
             maxPrice = productFilters.maxPrice;
@@ -98,7 +102,12 @@ public with sharing class ProductController {
      */
     @AuraEnabled(Cacheable=true)
     public static Product__c[] getSimilarProducts(Id productId, Id familyId) {
+        if (!Schema.sObjectType.Product__c.fields.Name.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.MSRP__c.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.Description__c.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.Category__c.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.Level__c.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.Picture_URL__c.isAccessible()) { return null; }
+        if (!Schema.sObjectType.Product__c.fields.Material__c.isAccessible()) { return null; }
         return [SELECT Id, Name, MSRP__c, Description__c, Category__c, Level__c, Picture_URL__c, Material__c FROM Product__c WHERE Product_Family__c=:familyId AND Id!=:productId];
     }
-
-}
