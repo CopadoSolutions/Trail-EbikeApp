@@ -3,7 +3,7 @@
  */
 public with sharing class ProductController {
 
-    static Integer page_size = 9;
+    static Integer pageSize = 9;
 
     /**
      * @description Twrapper class for filters
@@ -84,8 +84,7 @@ public with sharing class ProductController {
                 whereClause = 'WHERE ' + String.join( criteria, ' AND ' );
             }                      
         }
-        Integer pageSize = ProductController.page_size;
-        Integer offset = (pageNumber - 1) * pageSize;
+        Integer offset = (pageNumber - 1) * ProductController.pageSize;
         PagedResult result =  new PagedResult();
         result.pageSize = pageSize;
         result.pageNumber = pageNumber;
