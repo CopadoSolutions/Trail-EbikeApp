@@ -5,6 +5,7 @@ u1.copado__User_Story_Title__c = 'Module 6: Contact Billing Country Hotfix';
 u1.copado__Project__r = new copado__Project__c(Module_External_Id__c='EBike-Project');
 u1.copado__Status__c = 'Approved';
 u1.copado__Functional_Specifications__c = 'This User Story contains an urgent fix to a flow that needs to be fixed in Production. This User Story (as it does not relate to the Ebike application we are building) would usually be in another project.  For the sake of simplicity, we will include this User Story in our project.\nYou will find out why later.';
+u1.copado__Technical_Specifications__c = 'This flow includes  2 flows (On_Account_Update and Update_Account_Contacts) and 1 Page Layout (Account-Account Layout).  The "On Account Update" ProcessBuilder flow will trigger the "Update Account Contacts" flow.';
 u1.copado__Org_Credential__c = hotfix.Id;
 u1.copado__Environment__c = hotfix.copado__Environment__c;
 upsert u1 Module_External_Id__c;
