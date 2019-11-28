@@ -72,6 +72,10 @@ private static copado__Step__c createUrlCalloutStep(Id deployId, Integer stepOrd
 	s.copado__DataJson__c = datajson;
 	return s;
 }
+private static copado__Step__c createApexStep(Id deployId, Integer stepOrder, String stepName) {
+	copado__Step__c s = createDeploymentStep(deployId, stepOrder, 'Apex', stepName);
+	return s;
+}
 private static copado__Continuous_Integration__c createCIrecord(String branchName, Id destOrgId, Id gitRepoId) {
 	copado__Continuous_Integration__c x = new copado__Continuous_Integration__c(Name=DEPLOYMENTNAME);
 	x.copado__Active__c = true;
@@ -115,4 +119,14 @@ steps.add(createUrlCalloutStep(depl.Id, 1, 'Configure Sandbox-Dev1', sandboxCIjo
 String sandboxCIjobURI2 = createRunCIjobString(cijobs[2].Id, u.Division);
 steps.add(createUrlCalloutStep(depl.Id, 2, 'Configure Sandbox-Dev2', sandboxCIjobURI2));
 
+//Create URL callout deployment steps (Refresh cache)
+String cacheRefreshString = createCacheRefreshString(orgCred_sandbox2, u.Division);
+steps.add(createUrlCalloutStep(depl.Id, 3, 'Refresh Sandbox cache Dev2', cacheRefreshString));
+
+//Create Apex Step (clear cache of Copado metadata)
+steps.add(createApexStep(depl.Id, 4, 'Remove Copado from index -Dev2'));
+
 insert steps;
+
+//Add Attachment File
+insertAttachment(steps[4].Id, 'Apex', 'CopadoTrailHelper.trimMetadataCache(\'copado\', \'Dev2\');');
