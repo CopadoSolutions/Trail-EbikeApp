@@ -110,9 +110,9 @@ String copadoOrgCiJobURI = createRunCIjobString(cijobs[0].Id, u.Division);
 steps.add(createUrlCalloutStep(depl.Id, 0, 'Configure CopadoOrg', copadoOrgCiJobURI));
 
 //Create URL callout deployment steps (Sandbox)
-String sandboxCIjobURI1 = createRunCIjobString(cijobs[0].Id, u.Division);
+String sandboxCIjobURI1 = createRunCIjobString(cijobs[1].Id, u.Division);
 steps.add(createUrlCalloutStep(depl.Id, 1, 'Configure Sandbox-Dev1', sandboxCIjobURI1));
-String sandboxCIjobURI2 = createRunCIjobString(cijobs[1].Id, u.Division);
+String sandboxCIjobURI2 = createRunCIjobString(cijobs[2].Id, u.Division);
 steps.add(createUrlCalloutStep(depl.Id, 2, 'Configure Sandbox-Dev2', sandboxCIjobURI2));
 
 insert steps;
